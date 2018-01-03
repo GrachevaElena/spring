@@ -16,7 +16,7 @@ public class Violin implements Instrument {
     }
 
     public void sound() {
-        System.out.println("Violin plays (numStrings="+numStrings+")");
+        System.out.println("Violin (numStrings="+numStrings+")");
     }
 
 }

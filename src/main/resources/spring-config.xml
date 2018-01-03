@@ -12,10 +12,14 @@
         <property name="numStrings" value="6"/>
     </bean>
 
-    <bean id="violinPlayer" class="com.netcracker.Musician">
-        <constructor-arg ref="violin"/>
+    <bean id="playerOfMiddleAge" class="com.netcracker.Musician">
+        <constructor-arg name="age" value="35"></constructor-arg>
     </bean>
-    <bean id="guitarPlayer" class="com.netcracker.Musician">
+
+    <bean id="violinPlayer" class="com.netcracker.Musician" parent="playerOfMiddleAge">
+        <property name="instrument" ref="violin"/>
+    </bean>
+    <bean id="guitarPlayer" class="com.netcracker.Musician" parent="playerOfMiddleAge">
         <property name="instrument" ref="guitar"/>
     </bean>
 
