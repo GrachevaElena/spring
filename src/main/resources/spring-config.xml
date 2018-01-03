@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="violin" class="com.netcracker.Violin">
+        <constructor-arg value="4"/>
+    </bean>
+    <bean id="guitar" class="com.netcracker.Guitar" >
+        <property name="numStrings" value="6"/>
+    </bean>
+
+    <bean id="violinPlayer" class="com.netcracker.Musician">
+        <constructor-arg ref="violin"/>
+    </bean>
+    <bean id="guitarPlayer" class="com.netcracker.Musician">
+        <property name="instrument" ref="guitar"/>
+    </bean>
+
+</beans>
