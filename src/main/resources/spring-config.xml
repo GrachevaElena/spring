@@ -5,6 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="piano" class="com.netcracker.Piano">
+        <constructor-arg value="0"/>
+    </bean>
     <bean id="violin" class="com.netcracker.Violin">
         <constructor-arg value="4"/>
     </bean>
@@ -12,11 +15,30 @@
         <property name="numStrings" value="6"/>
     </bean>
 
-    <bean id="violinPlayer" class="com.netcracker.Musician">
-        <constructor-arg ref="violin"/>
-    </bean>
+
     <bean id="guitarPlayer" class="com.netcracker.Musician">
-        <property name="instrument" ref="guitar"/>
+        <property name="instrument">
+            <list>
+                <ref bean="guitar"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="guitarAndViolinPlayer" class="com.netcracker.Musician">
+        <property name="instrument">
+            <list>
+                <ref bean="guitar"/>
+                <ref bean="violin"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="guitarAndViolinAndPianoPlayer" class="com.netcracker.Musician">
+        <property name="instrument">
+            <list>
+                <ref bean="guitar"/>
+                <ref bean="violin"/>
+                <ref bean="piano"/>
+            </list>
+        </property>
     </bean>
 
 </beans>

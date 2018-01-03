@@ -16,7 +16,7 @@ public class Guitar implements Instrument{
     }
 
     public void sound() {
-        System.out.println("Guitar plays (numStrings="+numStrings+")");
+        System.out.println("Guitar (numStrings="+numStrings+")");
     }
 
 }

@@ -1,13 +1,13 @@
 package com.netcracker;
 
-public class Violin implements Instrument {
+public class Piano implements Instrument{
 
     private int numStrings;
 
-    public Violin() {
+    public Piano() {
     }
 
-    public Violin(int numStrings) {
+    public Piano(int numStrings) {
         this.numStrings = numStrings;
     }
 
@@ -16,7 +16,6 @@ public class Violin implements Instrument {
     }
 
     public void sound() {
-        System.out.println("Violin (numStrings="+numStrings+")");
+        System.out.println("Piano (numStrings="+numStrings+")");
     }
-
 }

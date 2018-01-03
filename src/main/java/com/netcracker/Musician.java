@@ -1,32 +1,29 @@
 package com.netcracker;
 
+import java.util.List;
+
 public class Musician {
 
-    private Instrument instrument;
+    private List<Instrument> instrument;
 
     public Musician() {
     }
 
-    public Musician(Instrument instrument) {
+    public Musician(List<Instrument> instrument) {
         this.instrument = instrument;
     }
 
-    public Instrument getInstrument() {
+    public List<Instrument> getInstrument() {
         return instrument;
     }
 
-    public void setInstrument(Instrument instrument) {
+    public void setInstrument(List<Instrument> instrument) {
         this.instrument = instrument;
     }
 
-    @Override
-    public String toString() {
-        return "Musician{" +
-                "instrument=" + instrument +
-                '}';
-    }
-
     public void play(){
-        instrument.sound();
+        System.out.println("Musician is playing:");
+        for (Instrument instr: instrument)
+            instr.sound();
     }
 }
