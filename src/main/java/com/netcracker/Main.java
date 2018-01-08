@@ -11,9 +11,6 @@ public class Main {
 
         Musician musician=(Musician) context.getBean("violinPlayer");
         musician.play();
-
-        musician=(Musician) context.getBean("guitarPlayer");
-        musician.play();
     }
 
 }

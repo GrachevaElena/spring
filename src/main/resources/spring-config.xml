@@ -5,18 +5,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="violin" class="com.netcracker.Violin">
-        <constructor-arg value="4"/>
-    </bean>
-    <bean id="guitar" class="com.netcracker.Guitar" >
-        <property name="numStrings" value="6"/>
-    </bean>
+    <bean id="simpleConfig" class="com.netcracker.SimpleConfig"/>
 
     <bean id="violinPlayer" class="com.netcracker.Musician">
-        <constructor-arg ref="violin"/>
+        <property name="instrument" value="#{simpleConfig.instrument}"/>
     </bean>
-    <bean id="guitarPlayer" class="com.netcracker.Musician">
-        <property name="instrument" ref="guitar"/>
-    </bean>
+
 
 </beans>

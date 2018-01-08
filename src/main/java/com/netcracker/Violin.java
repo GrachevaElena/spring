@@ -2,7 +2,7 @@ package com.netcracker;
 
 public class Violin implements Instrument {
 
-    private int numStrings;
+    private int numStrings=4;
 
     public Violin() {
     }
