@@ -5,12 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="violin" class="com.netcracker.Violin">
-        <constructor-arg value="4"/>
-    </bean>
-    <bean id="guitar" class="com.netcracker.Guitar" >
-        <property name="numStrings" value="6"/>
-    </bean>
+    <bean id="serviceFactory" class="com.netcracker.ServiceFactory" factory-method="getServiceFactory"/>
+
+    <bean id="violin" factory-bean="serviceFactory" factory-method="getViolin"/>
+    <bean id="guitar" factory-bean="serviceFactory" factory-method="getGuitar"/>
 
     <bean id="violinPlayer" class="com.netcracker.Musician">
         <constructor-arg ref="violin"/>
