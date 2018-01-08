@@ -19,4 +19,9 @@
         <property name="instrument" ref="guitar"/>
     </bean>
 
+    <bean id="orchestra" class="com.netcracker.Orchestra" >
+        <lookup-method name="getGuitarPlayer" bean="guitarPlayer"/>
+        <lookup-method name="getViolinPlayer" bean="violinPlayer"/>
+    </bean>
+
 </beans>
