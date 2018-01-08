@@ -1,7 +1,10 @@
 package com.netcracker;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Musician {
 
+    @Autowired
     private Instrument instrument;
 
     public Musician() {

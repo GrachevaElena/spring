@@ -9,10 +9,10 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
-        Musician musician=(Musician) context.getBean("violinPlayer");
+        Musician musician=(Musician) context.getBean("guitarPlayer");
         musician.play();
 
-        musician=(Musician) context.getBean("guitarPlayer");
+        musician=(Musician) context.getBean("guitarPlayer2");
         musician.play();
     }
 

@@ -2,21 +2,19 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="violin" class="com.netcracker.Violin">
-        <constructor-arg value="4"/>
-    </bean>
-    <bean id="guitar" class="com.netcracker.Guitar" >
+    <bean id="instrument" class="com.netcracker.Guitar" >
         <property name="numStrings" value="6"/>
     </bean>
 
-    <bean id="violinPlayer" class="com.netcracker.Musician">
-        <constructor-arg ref="violin"/>
-    </bean>
-    <bean id="guitarPlayer" class="com.netcracker.Musician">
-        <property name="instrument" ref="guitar"/>
-    </bean>
+    <bean id="guitarPlayer" class="com.netcracker.Musician" autowire="constructor" /><!--"byName"--><!--"constructor"-->
+
+    <context:annotation-config/>
+
+    <bean id="guitarPlayer2" class="com.netcracker.Musician" />
+
 
 </beans>
